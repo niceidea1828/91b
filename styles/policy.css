@@ -1,0 +1,24 @@
+body {
+  padding: 15px;
+}
+
+.p_header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.text {
+  margin-bottom: 100px;
+}
+
+.btn {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+
+  width: 208.819px;
+  height: 63.247px;
+}

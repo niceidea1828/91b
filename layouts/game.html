@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, width=device-width, viewport-fit=cover" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/common_style.css" />
+    <link rel="stylesheet" href="../styles/game.css" />
+    <title>This App</title>
+  </head>
+  <body>
+    <div class="wrapper hidden">
+      <div class="modal modal_1">
+        <div class="modal_text">Ставка</div>
+
+        <div class="modal_control block">
+          <div class="minus btn">-</div>
+          <div class="modal_bet-amount_cont block">
+            <img src="../png/coin.png" alt="" />
+            <div class="modal_bet-amount">300</div>
+          </div>
+          <div class="plus btn">+</div>
+        </div>
+
+        <div class="modal_ok btn">Сделать ставку</div>
+      </div>
+
+      <div class="modal modal_2 hidden">
+        <div class="modal_text"></div>
+
+        <div class="modal_win_cont block">
+          <img src="../png/coin.png" alt="" />
+          <div class="modal_win"></div>
+        </div>
+
+        <div class="modal_ok btn">OK</div>
+      </div>
+
+      <div class="balance_cont btn">
+        <div class="balance"></div>
+        <img src="../png/coin.png" alt="" />
+      </div>
+
+      <div class="slot_cont_cont block">
+        <div class="slot_cont"></div>
+      </div>
+
+      <div class="btn spin">крутить</div>
+
+      <div class="footer">
+        <a href="main.html">
+          <img src="../png/m1.png" alt="" />
+        </a>
+
+        <a href="win.html">
+          <img src="../png/m2.png" alt="" />
+        </a>
+
+        <a href="game.html">
+          <img src="../png/ma3.png" alt="" />
+        </a>
+      </div>
+    </div>
+
+    <script src="../scripts/jQuery.js"></script>
+    <script src="../scripts/game.js"></script>
+  </body>
+</html>

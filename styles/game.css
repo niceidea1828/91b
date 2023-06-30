@@ -1,0 +1,109 @@
+.wrapper {
+  overflow: hidden;
+  background: #2c2c2c;
+}
+
+.balance_cont {
+  margin: 20px auto auto;
+}
+
+.slot_cont_cont {
+  width: 330px;
+  height: 440px;
+
+  margin: auto;
+}
+
+.slot_cont {
+  width: 100%;
+  height: 90%;
+
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.slot_col {
+  position: relative;
+
+  width: 33%;
+  height: 25%;
+}
+
+.inner_slot_col {
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  transition: top 4s ease;
+}
+
+.slot {
+  width: 100%;
+  height: 100%;
+}
+
+.slot img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.spin {
+  margin: 20px auto 80px;
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 266px;
+  height: 216px;
+
+  border-radius: 20px;
+  border: 3px solid #fff;
+  background: rgba(73, 72, 71, 0.7);
+  backdrop-filter: blur(10.5px);
+}
+
+.modal_title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.modal_control {
+  gap: 5px;
+}
+
+.modal_bet-amount_cont,
+.modal_win_cont {
+  width: 162px;
+  height: 53px;
+
+  border-radius: 26.5px;
+  background: #05030a;
+}
+
+.minus,
+.plus {
+  width: 42px;
+  height: 42px;
+
+  font-size: 28px;
+}
+
+.modal_ok {
+  width: 183px;
+  height: 50px;
+
+  font-size: 16px;
+}

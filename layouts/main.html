@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/common_style.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper hidden">
+      <div class="balance_cont btn">
+        <div class="balance"></div>
+        <img src="../png/coin.png" alt="" />
+      </div>
+
+      <div class="bets"></div>
+
+      <div class="footer">
+        <a href="main.html">
+          <img src="../png/ma1.png" alt="" />
+        </a>
+
+        <a href="win.html">
+          <img src="../png/m2.png" alt="" />
+        </a>
+
+        <a href="game.html">
+          <img src="../png/m3.png" alt="" />
+        </a>
+      </div>
+    </div>
+
+    <script src="../scripts/jQuery.js"></script>
+    <script>
+      if (!localStorage.balance_b91) {
+        localStorage.balance_b91 = 15000;
+      }
+
+      if (!localStorage.bets_b91) {
+        localStorage.bets_b91 = "[]";
+      }
+
+      $(".balance").html(localStorage.balance_b91);
+
+      for (let i = 0; i < 7; i++) {
+        let bets = JSON.parse(localStorage.bets_b91);
+
+        let betElem = bets.includes(i)
+          ? $(`
+        <div class="bet">
+          <img src="../png/l${i + 1}.png" alt="" class="bet_line" />
+          <div class="bet_text">Ставка сделана!</div>
+
+          <img src="../png/c${i + 1}.png" alt="" class="bet_card hidden" />
+        </div>
+        `)
+          : $(`
+        <div class="bet">
+          <img src="../png/l${i + 1}.png" alt="" class="bet_line hidden" />
+          <div class="bet_text hidden">Ставка сделана!</div>
+
+          <img src="../png/c${i + 1}.png" alt="" class="bet_card" />
+        </div>
+        `);
+
+        $(".bets").append(betElem);
+      }
+
+      $(".bet").click(function () {
+        let ind = $(this).index(".bet");
+
+        let bets = JSON.parse(localStorage.bets_b91);
+        bets.push(ind);
+        localStorage.bets_b91 = JSON.stringify(bets);
+
+        $(".bet_card").eq(ind).addClass("hidden");
+
+        $(".bet_line").eq(ind).removeClass("hidden");
+        $(".bet_text").eq(ind).removeClass("hidden");
+
+        if (+localStorage.balance_b91 >= 500) {
+          changeBalance(-500);
+        }
+      });
+
+      window.onload = () => {
+        $(".wrapper").removeClass("hidden");
+      };
+
+      function changeBalance(amount) {
+        localStorage.balance_b91 = +localStorage.balance_b91 + amount;
+        $(".balance").html(localStorage.balance_b91);
+      }
+    </script>
+  </body>
+</html>
